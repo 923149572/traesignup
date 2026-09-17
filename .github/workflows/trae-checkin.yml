@@ -1,0 +1,19 @@
+name: TraeCode 每日签到
+
+on:
+  schedule:
+    # GitHub Actions 使用 UTC 时间，01:00 UTC = 北京时间 09:00
+    - cron: '0 1 * * *'
+  # 支持在 Actions 页面手动触发
+  workflow_dispatch:
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 执行签到
+        env:
+          TRAE_TOKEN: ${{ secrets.TRAE_TOKEN }}
+        run: python3 scripts/trae_checkin.py

@@ -15,6 +15,7 @@ jobs:
 
       - name: 执行签到
         env:
+          TRAE_COOKIE: ${{ secrets.TRAE_COOKIE }}
           TRAE_TOKEN: ${{ secrets.TRAE_TOKEN }}
           TRAE_DEVICE_ID: ${{ secrets.TRAE_DEVICE_ID }}
         run: python3 scripts/trae_checkin.py

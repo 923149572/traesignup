@@ -2,8 +2,8 @@ name: TraeCode 每日签到
 
 on:
   schedule:
-    # GitHub Actions 使用 UTC 时间，01:00 UTC = 北京时间 09:00
-    - cron: '0 1 * * *'
+    # GitHub Actions 使用 UTC 时间，22:00 UTC = 北京时间次日 06:00
+    - cron: '0 22 * * *'
   # 支持在 Actions 页面手动触发
   workflow_dispatch:
 
